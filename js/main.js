@@ -173,15 +173,37 @@
                     }
                 },
         });
-
         $('#count').countdown('2026/05/02', function(event) {
+
+    var days = event.offset.totalDays;
+
+    $(this).html(
+        '<div class="count-block días">' +
+            days + '<span class="count-label">día' + (days !== 1 ? 's' : '') + '</span>' +
+        '</div>' +
+
+        '<div class="count-block horas">' +
+            event.offset.hours + '<span class="count-label">horas</span>' +
+        '</div>' +
+
+        '<div class="count-block minutos">' +
+            event.offset.minutes + '<span class="count-label">minutos</span>' +
+        '</div>' +
+
+        '<div class="count-block segundos">' +
+            event.offset.seconds + '<span class="count-label">segundos</span>' +
+        '</div>'
+    );
+});
+
+       /* $('#count').countdown('2026/05/02', function(event) {
             $(this).html(event.strftime('' + 
                 '<div class="count-block días">%D<span class="count-label">días%!d</span></div>' + 
                 '<div class="count-block horas">%H<span class="count-label">%!H:hora,horas;</span></div>' + 
                 '<div class="count-block minutos">%M<span class="count-label">%!M:minuto,minutos;</span></div>' + 
                 '<div class="count-block segundos">%S<span class="count-label">%!S:segundo,segundos;</span></div>'
             ));
-        });
+        }); */
 
         $('.gallery-grid').magnificPopup({
             delegate: 'a',
