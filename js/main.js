@@ -175,7 +175,7 @@
         });
 
         
-        $('#count').countdown('2026/05/02', function (event) {
+        $('#count').countdown('2026/05/02 13:00:00', function (event) {
 
     function twoDigits(n) {
         return String(n).padStart(2, '0');
